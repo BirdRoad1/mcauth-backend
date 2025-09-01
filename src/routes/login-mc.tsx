@@ -77,7 +77,7 @@ export default function LoginMcScreen() {
           borderRadius: 4,
         }}
       >
-        /login {code}
+        /mcauth {code}
       </p>
       <div
         style={{

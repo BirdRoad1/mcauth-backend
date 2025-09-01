@@ -22,9 +22,11 @@ export default function SignupMcScreen() {
           clearInterval(interval);
           // Submit!
           try {
-            await API.submitSignup(id);
+            const token = await API.submitSignup(id);
+            localStorage.setItem("token", token);
+
             alert("Account created!");
-            navigate("/login");
+            navigate("/notepad");
           } catch (err) {
             alert(err instanceof Error ? err.message : String(err));
           }
@@ -75,7 +77,7 @@ export default function SignupMcScreen() {
           borderRadius: 4,
         }}
       >
-        /login {code}
+        /mcauth {code}
       </p>
       <div
         style={{
